@@ -1,12 +1,27 @@
 import React from "react";
-import Features from "../../components/features/Features";
+import Feature from "../../components/feature/Feature";
 import "./whatGPT3.css";
+
+const featuresBawah = [
+  {
+    tittle: "Chatbots",
+    text: "We so opinion friends me message as delight. Whole front do of plate heard oh ought.",
+  },
+  {
+    tittle: "Knowledgebase",
+    text: "At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put impossible own apartments b",
+  },
+  {
+    tittle: "Education",
+    text: "At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put impossible own apartments b",
+  },
+];
 
 const WhatGPT3 = () => (
   <div className="gpt3__whatgpt3 section__margin" id="wgpt3">
     <div className="gpt3__whatgpt3-feature">
-      <Features
-        title="What is GPT-3"
+      <Feature
+        tittle="What is GPT-3"
         text="We so opinion friends me message as delight. Whole front do of plate heard oh ought. His defective nor convinced residence own. Connection has put impossible own apartments boisterous. At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by."
       />
     </div>
@@ -17,18 +32,13 @@ const WhatGPT3 = () => (
       <p>Explore the Library</p>
     </div>
     <div className="gpt3__whatgpt3-container">
-      <Features
-        title="Chatbots"
-        text="We so opinion friends me message as delight. Whole front do of plate heard oh ought."
-      />
-      <Features
-        title="Knowledgebase"
-        text="At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put impossible own apartments b"
-      />
-      <Features
-        title="Education"
-        text="At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put impossible own apartments b"
-      />
+      {featuresBawah.map((item, index) => (
+        <Feature
+          tittle={item.tittle}
+          text={item.text}
+          key={item.tittle + index}
+        />
+      ))}
     </div>
   </div>
 );
